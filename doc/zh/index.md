@@ -19,7 +19,7 @@
 
 # org.apache.cordova.device
 
-这个插件定义全球 `device` 对象，描述该设备的硬件和软件。 虽然对象是在全球范围内，但不是可用，直到后 `deviceready` 事件。
+這個外掛程式定義全球 `device` 物件，描述該設備的硬體和軟體。 雖然物件是在全球範圍內，但不是可用，直到後 `deviceready` 事件。
 
     document.addEventListener("deviceready", onDeviceReady, false);
     function onDeviceReady() {
@@ -27,12 +27,12 @@
     }
     
 
-## 安装
+## 安裝
 
     cordova plugin add org.apache.cordova.device
     
 
-## 属性
+## 屬性
 
 *   device.cordova
 *   device.model
@@ -43,14 +43,14 @@
 
 ## device.cordova
 
-获取Cordova在设备上运行的版本。
+獲取科爾多瓦在設備上運行的版本。
 
-### 支持的平台
+### 支援的平臺
 
-*   亚马逊火 OS
-*   Android 系统
+*   亞馬遜火 OS
+*   Android 系統
 *   黑莓 10
-*   火狐浏览器操作系统
+*   火狐瀏覽器作業系統
 *   iOS
 *   Tizen
 *   Windows Phone 7 和 8
@@ -58,11 +58,11 @@
 
 ## device.model
 
-`device.model`返回设备的模型或产品的名称。值由设备制造商设置，并且同一产品的不同版本可能不同。
+`device.model`返回設備的模型或產品的名稱。值由設備製造商設置和同一產品的不同版本可能不同。
 
-### 支持的平台
+### 支援的平臺
 
-*   Android 系统
+*   Android 系統
 *   黑莓 10
 *   iOS
 *   Tizen
@@ -71,40 +71,40 @@
 
 ### 快速的示例
 
-    / / Android： Nexus 返回"激情"（Nexus One 代码名称） / / 摩托罗拉 Droid 返回"田鼠"/ / 黑莓手机： 火炬 9800 返回"9800"/ / iOS： 迷你 ipad，返回与 iPad2，5 ；iPhone 5 是 iPhone 5，1。 请参阅 http://theiphonewiki.com/wiki/index.php?title=Models / / var 模型 = device.model ；
+    / / Android： Nexus 返回"激情"（Nexus One 代碼名稱） / / 摩托羅拉 Droid 返回"田鼠"/ / 黑莓手機： 火炬 9800 返回"9800"/ / iOS： 迷你 ipad，返回與 iPad2，5 ；iPhone 5 是 iPhone 5，1。 請參閱 HTTP://theiphonewiki.com/wiki/index.php?title=Models / / var 模型 = device.model ；
     
 
 ### Android 的怪癖
 
-*   获取[product name][1]来代替[model name][2]，这往往是生产代码名称。 例如，Nexus One 返回 `Passion` ，并且Motorola Droid 返回`voles`.
+*   獲取[產品名稱][1]而不是[產品型號名稱][2]，這往往是生產代碼名稱。 例如，Nexus One 返回 `Passion` ，和摩托羅拉 Droid 返回`voles`.
 
  [1]: http://developer.android.com/reference/android/os/Build.html#PRODUCT
  [2]: http://developer.android.com/reference/android/os/Build.html#MODEL
 
 ### Tizen 怪癖
 
-*   返回与供应商指派的设备型号，例如，`TIZEN`
+*   例如，返回與供應商指派的設備模型`TIZEN`
 
 ### Windows Phone 7 和 8 怪癖
 
-*   返回由制造商指定的设备型号。例如，Samsung Focus返回`SGH-i917`.
+*   返回由製造商指定的設備模型。例如，三星焦點返回`SGH-i917`.
 
 ## device.name
 
-**WARNING**： `device.name` 从2.3.0版本中 已被否决。使用 `device.model` 替代。
+**警告**： `device.name` 從版 2.3.0 已被否決。使用 `device.model` 相反。
 
 ## device.platform
 
-获取该设备的操作系统名称。
+獲取該設備的作業系統名稱。
 
     var string = device.platform;
     
 
-### 支持的平台
+### 支援的平臺
 
-*   Android 系统
+*   Android 系統
 *   黑莓 10
-*   火狐浏览器操作系统
+*   火狐瀏覽器作業系統
 *   iOS
 *   Tizen
 *   Windows Phone 7 和 8
@@ -123,28 +123,28 @@
 
 ### Windows Phone 7 的怪癖
 
-Windows Phone 7 作为`WinCE`设备报告给平台.
+Windows Phone 7 設備報告作為平臺`WinCE`.
 
-### Windows Phone 8 怪异
+### Windows Phone 8 怪癖
 
-Windows Phone 8 作为`Win32NT`设备报告给平台.
+Windows Phone 8 設備報告作為平臺`Win32NT`.
 
 ## device.uuid
 
-获取设备的通用唯一标识符 ([UUID][3]).
+獲取設備的通用唯一識別碼 ([UUID][3]).
 
  [3]: http://en.wikipedia.org/wiki/Universally_Unique_Identifier
 
     var string = device.uuid;
     
 
-### 说明
+### 說明
 
-UUID 如何生成的详细信息由设备制造商和特定于设备的平台或型号。
+UUID 如何生成的詳細資訊由設備製造商和特定于設備的平臺或模型。
 
-### 支持的平台
+### 支援的平臺
 
-*   Android 系统
+*   Android 系統
 *   黑莓 10
 *   iOS
 *   Tizen
@@ -153,39 +153,28 @@ UUID 如何生成的详细信息由设备制造商和特定于设备的平台或
 
 ### 快速的示例
 
-    / / Android： 返回一个随机的 64 位整数 （再次作为字符串返回!)
-    / / 设备的第一次启动生成的整数
-    / / 
-    / / BlackBerry： 返回设备的 PIN 号码 
-    / / 这是九个数字的唯一整数 （作为字符串，虽然!) 
-    / / 
-    / / iPhone： （从 UIDevice 类文档解释） 
-    / / 从创建的多个硬件标识中返回一个字符串的哈希值。
-    / / 它保证每个设备的唯一性，并不能绑定 
-    / / 到用户帐户。
-    / / Windows Phone 7： 返回的哈希代码的设备 + 当前用户，
-    / / 如果是未定义用户，则一个 guid 生成并且将会持续到该应用程序被卸载 
-    / / Tizen： 返回设备的 IMEI (国际移动设备身份或 IMEI 是一个数字 
-    / / 独有的每一个 UMTS 和 GSM 移动电话。
+    / / Android： 一個隨機的 64 位整數 （作為字串返回，再次!) / / 上設備的第一次啟動生成的整數 / / / / 黑莓手機： 返回設備的 PIN 號碼 / / 這是九個數字的唯一整數 （作為字串，雖然!) / / / / iPhone： （從 UIDevice 類文檔解釋） / / 返回一個字串的雜湊值創建的多個硬體標識。
+    / / 它保證是唯一的每個設備並不能綁 / / 到使用者帳戶。
+    / / Windows Phone 7： 返回的雜湊代碼的設備 + 當前使用者，/ / 如果未定義使用者，則一個 guid 生成的並且將會保留直到卸載該應用程式 / / Tizen： 返回設備 IMEI （國際行動裝置身份或 IMEI 是一個數位 / / 獨有的每一個 UMTS 和 GSM 行動電話。
     var deviceID = device.uuid;
     
 
-### iOS 的怪异
+### iOS 怪癖
 
-`uuid`在 iOS 上不是独有的一种设备，但对于每个应用程序，每个安装各不相同。 如果你删除并重新安装应用程序，也可能在你升级iOS的时候，甚至每升级版本的应用程序（在IOS5.1明显）的变化。 `uuid`不是一个可靠的值。
+`uuid`在 iOS 上不是獨有的一種設備，但對於每個應用程式，為每個安裝各不相同。 如果您刪除並重新安裝應用程式，它會更改和可能還當你升級 iOS，或甚至升級每個版本 (明顯在 iOS 5.1 中) 的應用程式。 `uuid`不是一個可靠的值。
 
 ### Windows Phone 7 和 8 怪癖
 
-`uuid`为 Windows Phone 7 需要权限 `ID_CAP_IDENTITY_DEVICE` 。 Microsoft 可能会很快就弃用此属性。 如果能力不是可用的，应用程序将生成一个持久性的 guid 并保持应用程序的安装在设备上的持续时间。
+`uuid`為 Windows Phone 7 需要許可權 `ID_CAP_IDENTITY_DEVICE` 。 Microsoft 可能會很快就棄用此屬性。 如果能力不是可用的應用程式將生成一個持久性的 guid 並保持應用程式的安裝在設備上的持續時間。
 
 ## device.version
 
-获取操作系统版本。
+獲取作業系統版本。
 
     var string = device.version;
     
 
-### 支持的平台
+### 支援的平臺
 
 *   Android 2.1 +
 *   黑莓 10
@@ -196,14 +185,6 @@ UUID 如何生成的详细信息由设备制造商和特定于设备的平台或
 
 ### 快速的示例
 
-    / / Android： Froyo OS 将返回"2.2"
-    / / Eclair OS 将返回"2.1"、"2.0.1"2.0"
-    / / 版本也可以返回更新级别"2.1 update1"
-    / / 
-    / / BlackBerry： Torch 9800 使用 OS 6.0 将返回"6.0.0.600"
-    / / 
-    / / iPhone： iOS 3.2 返回"3.2"
-    / / 
-    / / Windows Phone 7： 返回当前 OS 版本号。 on Mango returns 7.10.7720
+    / / Android： Froyo OS 將返回"2.2"/ / Eclair OS 將返回"2.1"、"2.0.1"2.0"/ / 版本，也可以返回更新級別"2.1 update1"/ / / / 黑莓手機： 火炬 9800 使用 OS 6.0 將返回"6.0.0.600"/ / / / iPhone： iOS 3.2 返回"3.2"/ / / / Windows Phone 7： 返回當前 OS 版本數，。 on Mango returns 7.10.7720
     // Tizen: returns "TIZEN_20120425_2"
     var deviceVersion = device.version;
